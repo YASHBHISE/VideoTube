@@ -4,7 +4,7 @@
 import dotenv from "dotenv"
 
 // import mongoose from "mongoose";
-
+import { app } from "./app.js";
 // import {DB_NAME} from "./constants"
 import connectDB from "./db/index.js";
 
@@ -17,12 +17,11 @@ connectDB()
 .then(() => {
     app.on("error", (error) =>{
         console.log("ERROR",error)
-        throw
+        throw err
     })
     app.listen(process.env.PORT || 80000, () =>{
 
-        console.log(`server is running at port 
-            : ${process.env.PORT}`);
+        console.log(`server is running at port  : ${process.env.PORT}`);
     })
        
 })

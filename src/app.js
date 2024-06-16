@@ -29,6 +29,14 @@ app.use(cookieParser())
 // it move to next middleware until goes to server at the end next is in server
 // server discard the flag.
 
+// routes import 
+
+import userRouter from './routes/user.routes.js'
+
+// routes declaration
+
+app.use("/api/v1/users",userRouter)
 
 
+// http://localhost:8000/api/v1/users/register
 export {app}
